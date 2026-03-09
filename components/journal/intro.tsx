@@ -22,7 +22,7 @@ export function Intro() {
       <div className="pointer-events-none absolute bottom-1/4 right-[20%] h-[200px] w-[200px] rounded-full bg-primary/3 blur-[80px]" />
 
       {/* Chapter indicator */}
-      <div className="relative z-10 mb-10 flex items-center gap-4">
+      <div className="relative z-10 mb-6 flex items-center gap-4">
         <span className="font-mono text-sm text-muted-foreground">00</span>
         <div className="h-px w-12 bg-border" />
         <span className="font-mono text-xs uppercase tracking-widest text-muted-foreground">
@@ -30,37 +30,47 @@ export function Intro() {
         </span>
       </div>
 
-      {/* Main statement - centered with max-width */}
-      <div className="relative z-10 max-w-3xl">
-        <h1 className="text-balance text-3xl font-medium leading-tight tracking-tight md:text-4xl lg:text-5xl">
-          I build things that live on screens and think about how software shapes the way we work.
+      {/* Name as primary focus */}
+      <div className="relative z-10 max-w-4xl">
+        <h1 className="text-4xl font-semibold tracking-tight md:text-6xl lg:text-7xl">
+          Olvine George
         </h1>
+        <p className="mt-3 font-mono text-sm uppercase tracking-widest text-primary md:text-base">
+          Flutter Developer & AI Explorer
+        </p>
+      </div>
+
+      {/* Main statement */}
+      <div className="relative z-10 mt-12 max-w-2xl md:mt-16">
+        <p className="text-xl leading-relaxed text-secondary-foreground md:text-2xl">
+          I build things that live on screens and think about how software shapes the way we work.
+        </p>
         
-        <p className="mt-8 max-w-xl text-base leading-relaxed text-muted-foreground md:text-lg">
+        <p className="mt-6 max-w-xl text-base leading-relaxed text-muted-foreground">
           Currently exploring the intersection of mobile development and AI agents. 
           Based in Kenya, shipping Flutter apps and documenting the journey.
         </p>
       </div>
 
-      {/* Identity block */}
-      <div className="relative z-10 mt-14 grid max-w-3xl gap-8 border-t border-border pt-8 md:grid-cols-3">
+      {/* Details block */}
+      <div className="relative z-10 mt-12 flex flex-wrap gap-8 border-t border-border pt-8 md:mt-16 md:gap-16">
         <div>
-          <span className="font-mono text-xs uppercase tracking-widest text-primary">
-            Name
-          </span>
-          <p className="mt-2">Olvine George</p>
-        </div>
-        <div>
-          <span className="font-mono text-xs uppercase tracking-widest text-primary">
+          <span className="font-mono text-xs uppercase tracking-widest text-muted-foreground">
             Focus
           </span>
-          <p className="mt-2">Flutter, AI, Technical Writing</p>
+          <p className="mt-2 text-sm">Flutter, AI, Technical Writing</p>
         </div>
         <div>
-          <span className="font-mono text-xs uppercase tracking-widest text-primary">
+          <span className="font-mono text-xs uppercase tracking-widest text-muted-foreground">
             Location
           </span>
-          <p className="mt-2">Kenya</p>
+          <p className="mt-2 text-sm">Kenya</p>
+        </div>
+        <div>
+          <span className="font-mono text-xs uppercase tracking-widest text-muted-foreground">
+            Currently
+          </span>
+          <p className="mt-2 text-sm">Building AI-powered mobile experiences</p>
         </div>
       </div>
 
