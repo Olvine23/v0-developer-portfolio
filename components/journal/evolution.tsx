@@ -62,8 +62,8 @@ export function Evolution() {
             }`}
           >
             {/* Timeline dot */}
-            <div className="absolute left-4 top-0 z-10 flex h-8 w-8 -translate-x-1/2 items-center justify-center rounded-full border border-border bg-background md:left-1/2">
-              <div className="h-2 w-2 rounded-full bg-primary" />
+            <div className="group/dot absolute left-4 top-0 z-10 flex h-8 w-8 -translate-x-1/2 cursor-pointer items-center justify-center rounded-full border border-border bg-background transition-all duration-300 hover:scale-125 hover:border-primary/50 md:left-1/2">
+              <div className="h-2 w-2 rounded-full bg-primary transition-all duration-300 group-hover/dot:scale-150" />
             </div>
 
             {/* Year badge - centered on desktop */}
@@ -78,7 +78,7 @@ export function Evolution() {
               index % 2 === 0 ? "md:pr-24 md:text-right" : "md:pl-24"
             }`}>
               <div className="mt-10 md:mt-0">
-                <h3 className="mb-3 text-xl font-medium">{milestone.title}</h3>
+                <h3 className="mb-3 text-xl font-medium transition-colors duration-300 hover:text-primary">{milestone.title}</h3>
                 <p className="mb-4 text-sm leading-relaxed text-muted-foreground">
                   {milestone.description}
                 </p>
@@ -88,7 +88,7 @@ export function Evolution() {
                   {milestone.technologies.map((tech, i) => (
                     <span 
                       key={i}
-                      className="rounded-full border border-border px-2 py-0.5 font-mono text-xs text-muted-foreground"
+                      className="rounded-full border border-border px-2 py-0.5 font-mono text-xs text-muted-foreground transition-all duration-200 hover:border-primary/50 hover:text-secondary-foreground"
                     >
                       {tech}
                     </span>

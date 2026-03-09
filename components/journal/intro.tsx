@@ -66,9 +66,9 @@ export function Intro() {
 
       {/* Scroll indicator */}
       <div className="absolute bottom-12 left-1/2 z-10 -translate-x-1/2">
-        <div className="flex flex-col items-center gap-2 text-muted-foreground">
-          <span className="font-mono text-xs uppercase tracking-widest">Scroll to explore</span>
-          <ArrowDown className="h-4 w-4 animate-bounce" />
+        <div className="group flex cursor-pointer flex-col items-center gap-2 text-muted-foreground transition-colors duration-300 hover:text-primary">
+          <span className="font-mono text-xs uppercase tracking-widest transition-all duration-300 group-hover:tracking-[0.2em]">Scroll to explore</span>
+          <ArrowDown className="h-4 w-4 animate-bounce transition-transform duration-300 group-hover:translate-y-1" />
         </div>
       </div>
     </section>

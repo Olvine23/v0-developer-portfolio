@@ -50,7 +50,7 @@ export function CurrentFocus() {
         {explorations.map((item, index) => (
           <div 
             key={index}
-            className="group relative border border-border bg-card p-8 transition-all duration-300 hover:border-primary/50 hover:bg-secondary/50"
+            className="group relative border border-border bg-card p-8 transition-all duration-300 hover:-translate-y-2 hover:border-primary/50 hover:bg-secondary/50 hover:shadow-xl hover:shadow-primary/5"
           >
             {/* Status badge */}
             <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-primary/30 bg-primary/10 px-3 py-1">
@@ -58,9 +58,9 @@ export function CurrentFocus() {
               <span className="font-mono text-xs text-primary">{item.status}</span>
             </div>
 
-            <item.icon className="mb-4 h-6 w-6 text-muted-foreground transition-colors group-hover:text-primary" />
+            <item.icon className="mb-4 h-6 w-6 text-muted-foreground transition-all duration-300 group-hover:text-primary group-hover:scale-110" />
             
-            <h3 className="mb-3 text-xl font-medium">{item.title}</h3>
+            <h3 className="mb-3 text-xl font-medium transition-colors duration-300 group-hover:text-primary">{item.title}</h3>
             <p className="text-sm leading-relaxed text-muted-foreground">
               {item.description}
             </p>

@@ -65,16 +65,16 @@ export function Systems() {
           <a
             key={index}
             href={system.link}
-            className="group block border-t border-border py-8 transition-colors first:border-t-0 hover:bg-secondary/30"
+            className="group block border-t border-border py-8 transition-all duration-300 first:border-t-0 hover:bg-secondary/30 hover:pl-4"
           >
             <div className="flex flex-col gap-6 md:flex-row md:items-start md:justify-between">
               {/* Left side */}
               <div className="flex-1">
                 <div className="mb-3 flex items-center gap-4">
-                  <h3 className="text-xl font-medium transition-colors group-hover:text-primary">
+                  <h3 className="text-xl font-medium transition-all duration-300 group-hover:text-primary group-hover:translate-x-1">
                     {system.title}
                   </h3>
-                  <ArrowUpRight className="h-4 w-4 text-muted-foreground opacity-0 transition-all group-hover:translate-x-0.5 group-hover:-translate-y-0.5 group-hover:text-primary group-hover:opacity-100" />
+                  <ArrowUpRight className="h-4 w-4 text-muted-foreground opacity-0 transition-all duration-300 group-hover:translate-x-1 group-hover:-translate-y-1 group-hover:text-primary group-hover:opacity-100" />
                 </div>
                 <p className="max-w-xl text-sm leading-relaxed text-muted-foreground">
                   {system.description}
@@ -93,7 +93,7 @@ export function Systems() {
                   {system.technologies.map((tech, i) => (
                     <span 
                       key={i}
-                      className="rounded-full border border-border px-2 py-0.5 font-mono text-xs text-muted-foreground"
+                      className="rounded-full border border-border px-2 py-0.5 font-mono text-xs text-muted-foreground transition-all duration-200 group-hover:border-primary/30 group-hover:text-secondary-foreground"
                     >
                       {tech}
                     </span>

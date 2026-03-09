@@ -61,7 +61,7 @@ export function Ideas() {
           <a
             key={index}
             href={article.link}
-            className="group flex flex-col border border-border bg-card p-8 transition-all duration-300 hover:border-primary/50"
+            className="group flex flex-col border border-border bg-card p-8 transition-all duration-300 hover:-translate-y-1 hover:border-primary/50 hover:shadow-lg hover:shadow-primary/5"
           >
             <div className="mb-4 flex items-center justify-between">
               <span className="font-mono text-xs uppercase tracking-widest text-primary">
@@ -72,7 +72,7 @@ export function Ideas() {
               </span>
             </div>
             
-            <h3 className="mb-3 text-lg font-medium leading-snug transition-colors group-hover:text-primary">
+            <h3 className="mb-3 text-lg font-medium leading-snug transition-all duration-300 group-hover:text-primary">
               {article.title}
             </h3>
             
@@ -80,9 +80,9 @@ export function Ideas() {
               {article.excerpt}
             </p>
             
-            <div className="flex items-center gap-2 text-sm font-medium text-muted-foreground transition-colors group-hover:text-primary">
-              Read article
-              <ArrowUpRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+            <div className="flex items-center gap-2 text-sm font-medium text-muted-foreground transition-all duration-300 group-hover:text-primary group-hover:gap-3">
+              <span className="relative after:absolute after:bottom-0 after:left-0 after:h-px after:w-0 after:bg-primary after:transition-all after:duration-300 group-hover:after:w-full">Read article</span>
+              <ArrowUpRight className="h-4 w-4 transition-all duration-300 group-hover:translate-x-1 group-hover:-translate-y-1" />
             </div>
           </a>
         ))}

@@ -59,18 +59,18 @@ export function Connect() {
             href={link.href}
             target="_blank"
             rel="noopener noreferrer"
-            className="group flex items-center gap-6 border border-border p-6 transition-all duration-300 hover:border-primary/50 hover:bg-secondary/30"
+            className="group flex items-center gap-6 border border-border p-6 transition-all duration-300 hover:-translate-y-1 hover:border-primary/50 hover:bg-secondary/30 hover:shadow-lg hover:shadow-primary/5"
           >
-            <div className="flex h-12 w-12 items-center justify-center rounded-full border border-border transition-colors group-hover:border-primary/50 group-hover:bg-primary/10">
-              <link.icon className="h-5 w-5 text-muted-foreground transition-colors group-hover:text-primary" />
+            <div className="flex h-12 w-12 items-center justify-center rounded-full border border-border transition-all duration-300 group-hover:border-primary/50 group-hover:bg-primary/10 group-hover:scale-110">
+              <link.icon className="h-5 w-5 text-muted-foreground transition-all duration-300 group-hover:text-primary" />
             </div>
             
             <div className="flex-1">
               <div className="flex items-center gap-2">
-                <span className="font-medium transition-colors group-hover:text-primary">
+                <span className="relative font-medium transition-all duration-300 after:absolute after:bottom-0 after:left-0 after:h-px after:w-0 after:bg-primary after:transition-all after:duration-300 group-hover:text-primary group-hover:after:w-full">
                   {link.label}
                 </span>
-                <ArrowUpRight className="h-4 w-4 text-muted-foreground opacity-0 transition-all group-hover:translate-x-0.5 group-hover:-translate-y-0.5 group-hover:text-primary group-hover:opacity-100" />
+                <ArrowUpRight className="h-4 w-4 text-muted-foreground opacity-0 transition-all duration-300 group-hover:translate-x-1 group-hover:-translate-y-1 group-hover:text-primary group-hover:opacity-100" />
               </div>
               <p className="text-sm text-muted-foreground">
                 {link.description}
