@@ -49,40 +49,52 @@ export function Evolution() {
         Here&apos;s the path that led me to where I am now.
       </p>
 
-      {/* Timeline */}
+      {/* Timeline - Mobile: simple left-aligned, Desktop: centered alternating */}
       <div className="relative">
-        {/* Vertical line */}
-        <div className="absolute bottom-0 left-4 top-0 w-px bg-border md:left-1/2 md:-translate-x-px" />
+        {/* Vertical line - left on mobile, center on desktop */}
+        <div className="absolute bottom-0 left-[11px] top-0 w-px bg-border md:left-1/2 md:-translate-x-px" />
 
-        {milestones.map((milestone, index) => (
-          <div 
-            key={index}
-            className={`relative mb-16 flex flex-col gap-8 last:mb-0 md:flex-row md:items-start ${
-              index % 2 === 0 ? "md:flex-row-reverse" : ""
-            }`}
-          >
-            {/* Timeline dot */}
-            <div className="group/dot absolute left-4 top-0 z-10 flex h-8 w-8 -translate-x-1/2 cursor-pointer items-center justify-center rounded-full border border-border bg-background transition-all duration-300 hover:scale-125 hover:border-primary/50 md:left-1/2">
-              <div className="h-2 w-2 rounded-full bg-primary transition-all duration-300 group-hover/dot:scale-150" />
-            </div>
+        <div className="space-y-10 md:space-y-16">
+          {milestones.map((milestone, index) => (
+            <div 
+              key={index}
+              className={`relative md:flex md:items-start ${
+                index % 2 === 0 ? "md:flex-row-reverse" : ""
+              }`}
+            >
+              {/* Timeline dot - Mobile */}
+              <div className="absolute left-0 top-0 z-10 flex h-6 w-6 items-center justify-center rounded-full border border-border bg-background md:hidden">
+                <div className="h-2 w-2 rounded-full bg-primary" />
+              </div>
 
-            {/* Year badge - centered on desktop */}
-            <div className="absolute left-4 top-12 md:left-1/2 md:top-0 md:-translate-x-1/2 md:-translate-y-full md:pb-4">
-              <span className="font-mono text-2xl font-medium text-primary">
-                {milestone.year}
-              </span>
-            </div>
+              {/* Timeline dot - Desktop */}
+              <div className="group/dot absolute left-1/2 top-0 z-10 hidden h-8 w-8 -translate-x-1/2 cursor-pointer items-center justify-center rounded-full border border-border bg-background transition-all duration-300 hover:scale-125 hover:border-primary/50 md:flex">
+                <div className="h-2 w-2 rounded-full bg-primary transition-all duration-300 group-hover/dot:scale-150" />
+              </div>
 
-            {/* Content */}
-            <div className={`ml-16 flex-1 md:ml-0 ${
-              index % 2 === 0 ? "md:pr-24 md:text-right" : "md:pl-24"
-            }`}>
-              <div className="mt-10 md:mt-0">
-                <h3 className="mb-3 text-xl font-medium transition-colors duration-300 hover:text-primary">{milestone.title}</h3>
-                <p className="mb-4 text-sm leading-relaxed text-muted-foreground">
+              {/* Year badge - Desktop only, above the dot */}
+              <div className="hidden md:absolute md:left-1/2 md:top-0 md:block md:-translate-x-1/2 md:-translate-y-full md:pb-4">
+                <span className="font-mono text-2xl font-medium text-primary">
+                  {milestone.year}
+                </span>
+              </div>
+
+              {/* Content */}
+              <div className={`pl-10 md:flex-1 md:pl-0 ${
+                index % 2 === 0 ? "md:pr-20 md:text-right" : "md:pl-20"
+              }`}>
+                {/* Year badge - Mobile only, inline */}
+                <span className="mb-1 block font-mono text-sm font-medium text-primary md:hidden">
+                  {milestone.year}
+                </span>
+                
+                <h3 className="mb-2 text-lg font-medium transition-colors duration-300 hover:text-primary md:text-xl">
+                  {milestone.title}
+                </h3>
+                <p className="mb-3 text-sm leading-relaxed text-muted-foreground">
                   {milestone.description}
                 </p>
-                <div className={`flex flex-wrap gap-2 ${
+                <div className={`flex flex-wrap gap-1.5 md:gap-2 ${
                   index % 2 === 0 ? "md:justify-end" : ""
                 }`}>
                   {milestone.technologies.map((tech, i) => (
@@ -95,12 +107,12 @@ export function Evolution() {
                   ))}
                 </div>
               </div>
-            </div>
 
-            {/* Spacer for alternating layout */}
-            <div className="hidden flex-1 md:block" />
-          </div>
-        ))}
+              {/* Spacer for alternating layout - Desktop only */}
+              <div className="hidden flex-1 md:block" />
+            </div>
+          ))}
+        </div>
       </div>
     </section>
   )
