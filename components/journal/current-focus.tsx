@@ -5,8 +5,8 @@ import { Sparkles, Bot, Smartphone } from "lucide-react"
 const explorations = [
   {
     icon: Bot,
-    title: "AI Agents",
-    description: "Building autonomous systems that can reason, plan, and execute. Exploring how LLMs can become reliable collaborators in development workflows.",
+    title: "Intelligent Systems",
+    description: "Exploring how software systems can reason, plan, and act. Experimenting with LLM-powered workflows and tools that assist development.",
     status: "Active exploration"
   },
   {
@@ -17,15 +17,15 @@ const explorations = [
   },
   {
     icon: Sparkles,
-    title: "AI + Mobile",
-    description: "Bringing intelligence to mobile apps. On-device ML, smart assistants, and creating experiences that adapt to user behavior.",
-    status: "Current project"
+    title: "Adaptive Mobile Apps",
+    description: "Designing mobile experiences that adapt to user behavior and context. Exploring how intelligent systems can enhance everyday applications.",
+    status: "Current experiments"
   }
 ]
 
 export function CurrentFocus() {
   return (
-    <section className="relative px-6 py-32 md:px-12 lg:px-24">
+    <section id="exploring" className="relative px-6 py-32 md:px-12 lg:px-24">
       {/* Chapter header */}
       <div className="mb-16 flex items-center gap-4">
         <span className="font-mono text-sm text-muted-foreground">01</span>

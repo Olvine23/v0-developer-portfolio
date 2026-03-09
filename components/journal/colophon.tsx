@@ -4,12 +4,10 @@ export function Colophon() {
       <div className="flex flex-col gap-8 md:flex-row md:items-end md:justify-between">
         {/* Left side */}
         <div>
-          <p className="mb-2 font-mono text-xs uppercase tracking-widest text-muted-foreground">
-            Colophon
-          </p>
+        
           <p className="max-w-md text-sm leading-relaxed text-muted-foreground">
-            Built with Next.js and Tailwind CSS. Typeset in Space Grotesk and JetBrains Mono. 
-            The Flutter blue accent is a nod to where this journey started.
+            Designed and built by Olvine George 💙<br/> A small corner of the internet
+            documenting the journey.
           </p>
         </div>
 
@@ -24,5 +22,5 @@ export function Colophon() {
         </div>
       </div>
     </footer>
-  )
+  );
 }

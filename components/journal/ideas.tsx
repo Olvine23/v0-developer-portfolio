@@ -4,32 +4,32 @@ import { ArrowUpRight } from "lucide-react"
 
 const writings = [
   {
-    title: "Why Flutter's Rendering Pipeline Matters",
-    excerpt: "Understanding what happens between your widget code and pixels on screen. A deep dive into how Flutter achieves 60fps.",
-    publication: "Dev.to",
-    date: "Feb 2024",
-    link: "#"
-  },
-  {
-    title: "Building AI Agents That Actually Work",
-    excerpt: "Lessons from building autonomous systems. Why most AI agents fail and what makes the difference between demos and production.",
-    publication: "Personal Blog",
-    date: "Jan 2024",
-    link: "#"
-  },
-  {
-    title: "The State Management Question",
-    excerpt: "After years of trying everything from Provider to Riverpod to BLoC, here's how I think about choosing state management in Flutter.",
+    title: "How to Build an AI Agent in Flutter Using Tool Calling",
+    excerpt: "Learn how to build an AI agent in Flutter using tool calling. This step-by-step guide explains tools, the agentic loop, and how Flutter apps can execute real actions with AI.",
     publication: "Medium",
-    date: "Dec 2023",
-    link: "#"
+    date: "March 2026",
+    link: "https://medium.com/@olivinegeorge/how-to-build-an-ai-agent-in-flutter-using-tool-calling-ee7e5be05188"
   },
   {
-    title: "From Zero to Published: My First Flutter Package",
-    excerpt: "A practical guide to creating, testing, and publishing your first Dart package on pub.dev. All the things I wish I knew.",
-    publication: "Dev.to",
-    date: "Nov 2023",
-    link: "#"
+    title: "Jaspr: Building Websites with Dart the Flutter Way",
+    excerpt: "What if Flutter developers could build real websites using Dart without fighting the web platform? Jaspr makes that possible. In this article, we explore how this lightweight framework brings a Flutter-like experience to modern web development.",
+    publication: "Medium",
+    date: "Jan 2026",
+    link: "https://medium.com/@olivinegeorge/jaspr-building-websites-with-dart-the-flutter-way-5e05b0d3a7e1"
+  },
+  {
+    title: "flutter_extend: The Productivity Boost Your Flutter Code Deserves",
+    excerpt: "Flutter is great, but sometimes the boilerplate gets in the way. Tasks like navigation, padding, and layout can quickly become repetitive. flutter_extend introduces a cleaner, more expressive way to write Flutter code using simple extensions that reduce clutter and speed up development.",
+    publication: "Medium",
+    date: "Dec 2025",
+    link: "https://medium.com/@olivinegeorge/flutter-extend-the-productivity-boost-your-flutter-code-deserves-093751c94f35"
+  },
+  {
+    title: "Clean Architecture for Dummies",
+    excerpt: "Clean Architecture often sounds like something reserved for senior engineers and complex systems. But at its core, it’s simply about organizing code so each part of your application has a clear responsibility. In this article, we break it down using simple analogies and show how separating UI, domain, and data layers makes your code easier to maintain and scale..",
+    publication: "Medium",
+    date: "Dec 2025",
+    link: "https://medium.com/@olivinegeorge/clean-architecture-for-dummies-6a8e48d49756"
   }
 ]
 
@@ -38,7 +38,7 @@ export function Ideas() {
     <section className="relative bg-secondary/30 px-6 py-32 md:px-12 lg:px-24">
       {/* Chapter header */}
       <div className="mb-16 flex items-center gap-4">
-        <span className="font-mono text-sm text-muted-foreground">03</span>
+        <span className="font-mono text-sm text-muted-foreground">05</span>
         <div className="h-px w-12 bg-border" />
         <span className="font-mono text-xs uppercase tracking-widest text-muted-foreground">
           Technical Ideas & Writing

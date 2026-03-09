@@ -1,33 +1,33 @@
-"use client"
+"use client";
 
-import { Github, Twitter, Linkedin, Mail, ArrowUpRight } from "lucide-react"
+import { Github, Twitter, Linkedin, Mail, ArrowUpRight } from "lucide-react";
 
 const links = [
   {
     label: "GitHub",
     description: "Code, experiments, and open source contributions",
-    href: "https://github.com/olvinegeorge",
-    icon: Github
+    href: "https://github.com/Olvine23",
+    icon: Github,
   },
   {
     label: "Twitter / X",
     description: "Thoughts on Flutter, AI, and building in public",
-    href: "https://twitter.com/olvinegeorge",
-    icon: Twitter
+    href: "https://twitter.com/GeorgeOlivine",
+    icon: Twitter,
   },
   {
     label: "LinkedIn",
     description: "Professional background and connections",
-    href: "https://linkedin.com/in/olvinegeorge",
-    icon: Linkedin
+    href: "https://www.linkedin.com/in/olivine-george-020404193/",
+    icon: Linkedin,
   },
   {
     label: "Email",
     description: "For collaborations, questions, or just to say hello",
-    href: "mailto:hello@olvinegeorge.dev",
-    icon: Mail
-  }
-]
+    href: "mailto:olivinegeorge@gmail.com",
+    icon: Mail,
+  },
+];
 
 export function Connect() {
   return (
@@ -45,10 +45,11 @@ export function Connect() {
       <h2 className="mb-6 max-w-3xl text-balance text-3xl font-medium tracking-tight md:text-4xl">
         If any of this resonated, I&apos;d love to hear from you
       </h2>
-      
+
       <p className="mb-16 max-w-2xl text-lg leading-relaxed text-muted-foreground">
-        Whether you&apos;re working on something similar, have questions about Flutter or AI, 
-        or just want to connect with someone on the same journey.
+        If any part of this journey resonated with you, feel free to reach out.
+        I’m always open to conversations, collaborations, or simply connecting
+        with fellow builders.
       </p>
 
       {/* Links grid */}
@@ -64,7 +65,7 @@ export function Connect() {
             <div className="flex h-12 w-12 items-center justify-center rounded-full border border-border transition-all duration-300 group-hover:border-primary/50 group-hover:bg-primary/10 group-hover:scale-110">
               <link.icon className="h-5 w-5 text-muted-foreground transition-all duration-300 group-hover:text-primary" />
             </div>
-            
+
             <div className="flex-1">
               <div className="flex items-center gap-2">
                 <span className="relative font-medium transition-all duration-300 after:absolute after:bottom-0 after:left-0 after:h-px after:w-0 after:bg-primary after:transition-all after:duration-300 group-hover:text-primary group-hover:after:w-full">
@@ -80,5 +81,5 @@ export function Connect() {
         ))}
       </div>
     </section>
-  )
+  );
 }

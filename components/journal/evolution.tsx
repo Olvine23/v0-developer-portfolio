@@ -2,28 +2,32 @@
 
 const milestones = [
   {
-    year: "2024",
-    title: "The AI Turn",
-    description: "Started seriously exploring AI agents and LLMs. Built my first RAG system, contributed to open source AI tools, and began thinking about how mobile apps will change with on-device intelligence.",
-    technologies: ["LangChain", "OpenAI", "Vector DBs", "Python"]
-  },
-  {
-    year: "2023",
-    title: "Going Deeper",
-    description: "Moved beyond building apps to understanding systems. Started contributing to the Flutter community, gave my first tech talk, and began writing about what I learned.",
-    technologies: ["Flutter Advanced", "Riverpod", "Custom Painters", "Technical Writing"]
+    year: "2026",
+    title: "Building and Sharing",
+    description:
+      "By this point, development had become more than writing code. I was building applications across mobile and web, documenting what I learned, and contributing to developer communities while continuing to grow through practice.",
+    technologies: ["Mobile Apps", "Web Development", "Technical Writing", "Community"]
   },
   {
     year: "2022",
-    title: "The Flutter Chapter",
-    description: "Discovered Flutter and fell in love with the developer experience. Built my first production app, learned Dart deeply, and started understanding why cross-platform development matters.",
-    technologies: ["Flutter", "Dart", "Firebase", "REST APIs"]
+    title: "Discovering Flutter",
+    description:
+      "After exploring different web and mobile frameworks, I discovered Flutter and quickly connected with the developer experience. It became a major part of how I built applications and how I started sharing what I was learning.",
+    technologies: ["Flutter", "Dart", "Firebase", "Cross-Platform"]
   },
   {
     year: "2021",
-    title: "First Code",
-    description: "Started learning to code with Python and web technologies. Built small projects, broke things, fixed them, and realized this is what I wanted to do.",
-    technologies: ["Python", "HTML/CSS", "JavaScript", "Git"]
+    title: "Frontend and Mobile Exploration",
+    description:
+      "This was a season of experimentation. I spent time building interfaces with React and later explored React Native, learning how different tools approached the same problems and expanding how I thought about application development.",
+    technologies: ["React", "React Native", "JavaScript", "REST APIs"]
+  },
+  {
+    year: "2019",
+    title: "First Lines of Code",
+    description:
+      "I wrote my first Hello World with Python and began experimenting with Django and basic web development. The projects were small, but they sparked the curiosity that pushed me deeper into software development.",
+    technologies: ["Python", "Django", "HTML/CSS", "Git"]
   }
 ]
 
@@ -32,7 +36,7 @@ export function Evolution() {
     <section className="relative px-6 py-32 md:px-12 lg:px-24">
       {/* Chapter header */}
       <div className="mb-16 flex items-center gap-4">
-        <span className="font-mono text-sm text-muted-foreground">04</span>
+        <span className="font-mono text-sm text-muted-foreground">06</span>
         <div className="h-px w-12 bg-border" />
         <span className="font-mono text-xs uppercase tracking-widest text-muted-foreground">
           How I Got Here
