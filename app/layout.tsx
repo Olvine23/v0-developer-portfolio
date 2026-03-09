@@ -14,24 +14,11 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  title: 'Olvine George | Flutter Developer & AI Explorer',
+  title: 'Olvine George',
   description: 'Flutter developer, AI explorer, technical writer, and community builder from Kenya. Building mobile experiences and exploring AI agents.',
   generator: 'v0.app',
   icons: {
-    icon: [
-      {
-        url: '/icon-light-32x32.png',
-        media: '(prefers-color-scheme: light)',
-      },
-      {
-        url: '/icon-dark-32x32.png',
-        media: '(prefers-color-scheme: dark)',
-      },
-      {
-        url: '/icon.svg',
-        type: 'image/svg+xml',
-      },
-    ],
+    icon:  './mylogo.png',
     apple: '/apple-icon.png',
   },
 }
