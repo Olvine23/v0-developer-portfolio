@@ -5,10 +5,14 @@ import { Ideas } from "@/components/journal/ideas"
 import { Evolution } from "@/components/journal/evolution"
 import { Connect } from "@/components/journal/connect"
 import { Colophon } from "@/components/journal/colophon"
+import { Spotlight } from "@/components/journal/spotlight"
 
 export default function Home() {
   return (
     <main className="relative min-h-screen">
+      {/* Mouse-follow spotlight effect */}
+      <Spotlight />
+      
       {/* Subtle noise texture overlay */}
       <div 
         className="pointer-events-none fixed inset-0 z-50 opacity-[0.015]"
