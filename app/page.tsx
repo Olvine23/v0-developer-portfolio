@@ -1,42 +1,38 @@
-import { Hero } from "@/components/portfolio/hero"
-import { About } from "@/components/portfolio/about"
-import { Experience } from "@/components/portfolio/experience"
-import { Projects } from "@/components/portfolio/projects"
-import { Writing } from "@/components/portfolio/writing"
-import { Exploring } from "@/components/portfolio/exploring"
-import { Contact } from "@/components/portfolio/contact"
-import { Footer } from "@/components/portfolio/footer"
-import { Spotlight } from "@/components/portfolio/spotlight"
+import { Intro } from "@/components/journal/intro"
+import { CurrentFocus } from "@/components/journal/current-focus"
+import { Systems } from "@/components/journal/systems"
+import { Ideas } from "@/components/journal/ideas"
+import { Evolution } from "@/components/journal/evolution"
+import { Connect } from "@/components/journal/connect"
+import { Colophon } from "@/components/journal/colophon"
 
 export default function Home() {
   return (
-    <div className="group/spotlight relative min-h-screen bg-background">
-      {/* Mouse spotlight effect */}
-      <Spotlight />
+    <main className="relative min-h-screen">
+      {/* Subtle noise texture overlay */}
+      <div 
+        className="pointer-events-none fixed inset-0 z-50 opacity-[0.015]"
+        style={{
+          backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E")`,
+        }}
+      />
+
+      {/* Chapters */}
+      <Intro />
       
-      <div className="mx-auto min-h-screen max-w-screen-xl px-6 py-12 md:px-12 md:py-20 lg:px-24 lg:py-0">
-        <div className="lg:flex lg:justify-between lg:gap-4">
-          {/* Left sticky panel */}
-          <Hero />
-          
-          {/* Right scrollable content */}
-          <main id="content" className="pt-24 lg:w-1/2 lg:py-24">
-            <About />
-            <Experience />
-            <Projects />
-            <Writing />
-            <Exploring />
-            <Contact />
-            <Footer />
-          </main>
-        </div>
+      <div className="mx-auto max-w-6xl">
+        <CurrentFocus />
+        <Systems />
       </div>
       
-      {/* Background decoration */}
-      <div className="pointer-events-none fixed inset-0 -z-10 overflow-hidden">
-        <div className="absolute -top-40 -right-40 h-96 w-96 rounded-full bg-primary/5 blur-3xl" />
-        <div className="absolute -bottom-40 -left-40 h-96 w-96 rounded-full bg-primary/3 blur-3xl" />
+      <Ideas />
+      
+      <div className="mx-auto max-w-6xl">
+        <Evolution />
+        <Connect />
       </div>
-    </div>
+      
+      <Colophon />
+    </main>
   )
 }
