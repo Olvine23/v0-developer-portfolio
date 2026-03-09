@@ -25,29 +25,31 @@ export function Spotlight() {
     }
   }, [isVisible])
 
+  console.log("[v0] Spotlight position:", position, "visible:", isVisible)
+  
   return (
     <div
-      className="pointer-events-none fixed inset-0 z-30 transition-opacity duration-500"
+      className="pointer-events-none fixed inset-0 z-0 overflow-hidden transition-opacity duration-500"
       style={{ opacity: isVisible ? 1 : 0 }}
     >
       {/* Primary glow - larger and softer */}
       <div
-        className="absolute h-[600px] w-[600px] -translate-x-1/2 -translate-y-1/2 rounded-full"
+        className="absolute h-[800px] w-[800px] -translate-x-1/2 -translate-y-1/2 rounded-full"
         style={{
           left: position.x,
           top: position.y,
-          background: `radial-gradient(circle, oklch(0.58 0.15 230 / 0.08) 0%, oklch(0.58 0.15 230 / 0.03) 35%, transparent 70%)`,
-          filter: "blur(40px)",
+          background: `radial-gradient(circle, rgba(1, 117, 194, 0.15) 0%, rgba(1, 117, 194, 0.05) 40%, transparent 70%)`,
+          filter: "blur(60px)",
         }}
       />
-      {/* Secondary glow - smaller, slightly more visible core */}
+      {/* Secondary glow - smaller, more visible core */}
       <div
-        className="absolute h-[300px] w-[300px] -translate-x-1/2 -translate-y-1/2 rounded-full"
+        className="absolute h-[400px] w-[400px] -translate-x-1/2 -translate-y-1/2 rounded-full"
         style={{
           left: position.x,
           top: position.y,
-          background: `radial-gradient(circle, oklch(0.58 0.15 230 / 0.06) 0%, transparent 60%)`,
-          filter: "blur(20px)",
+          background: `radial-gradient(circle, rgba(1, 117, 194, 0.12) 0%, rgba(1, 117, 194, 0.04) 50%, transparent 70%)`,
+          filter: "blur(30px)",
         }}
       />
     </div>
