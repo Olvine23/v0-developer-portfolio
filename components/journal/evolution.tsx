@@ -48,7 +48,7 @@ export function Evolution() {
         The evolution of a developer
       </h2>
       
-      <p className="mb-16 max-w-2xl text-lg leading-relaxed text-muted-foreground">
+      <p className="mb-16 max-w-2xl text-lg leading-relaxed  text-foreground/80">
         Every year brought new tools, new problems, and new ways of thinking. 
         Here&apos;s the path that led me to where I am now.
       </p>
@@ -95,7 +95,7 @@ export function Evolution() {
                 <h3 className="mb-2 text-lg font-medium transition-colors duration-300 hover:text-primary md:text-xl">
                   {milestone.title}
                 </h3>
-                <p className="mb-3 text-sm leading-relaxed text-muted-foreground">
+                <p className="mb-3 text-sm leading-relaxed  text-foreground/80">
                   {milestone.description}
                 </p>
                 <div className={`flex flex-wrap gap-1.5 md:gap-2 ${

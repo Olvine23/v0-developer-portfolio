@@ -41,7 +41,7 @@ export function Intro() {
           I build software across mobile and web, and explore how systems shape the way we work.
         </p>
 
-        <p className="mt-6 max-w-xl text-base leading-relaxed text-muted-foreground">
+        <p className="mt-6 max-w-xl text-base leading-relaxed text-foreground/80">
           Currently exploring the intersection of software systems, mobile experiences, and AI agents.
           Based in Kenya, building applications and documenting the journey.
         </p>

@@ -19,7 +19,7 @@ const projects = [
     description:
       "A platform where artists express creativity through spoken word. VoiceHub allows creators to share poetry, storytelling, and audio art while building a community around voice-driven expression.",
     technologies: ["Flutter", "Firebase"],
-    link: "#",
+    link: null,
     year: "2024",
     status: "In Progress"
   },
@@ -29,7 +29,7 @@ const projects = [
     description:
       "A digital memory journal designed to help people capture meaningful everyday moments. Stamp turns small life experiences into lasting memories through simple entries and reflections.",
     technologies: ["Flutter"],
-    link: "#",
+    link: null,
     year: "2024",
     status: "In Progress"
   }
@@ -66,7 +66,7 @@ export function Systems() {
         Things I&apos;ve shipped and experiments that taught me something
       </h2>
 
-      <p className="mb-16 max-w-2xl text-lg leading-relaxed text-muted-foreground">
+      <p className="mb-16 max-w-2xl text-lg leading-relaxed  text-foreground/80">
         Some are polished products. Others are experiments that helped me understand something new.
       </p>
 
@@ -75,7 +75,7 @@ export function Systems() {
         {projects.map((project, index) => (
           <a
             key={index}
-            href={project.link}
+            href={project.link || undefined}
             target="_blank"
             rel="noopener noreferrer"
             className="group block border-t border-border py-8 transition-all duration-300 first:border-t-0 hover:bg-secondary/30 hover:pl-4"
@@ -92,7 +92,7 @@ export function Systems() {
                   <ArrowUpRight className="h-4 w-4 text-muted-foreground opacity-0 transition-all duration-300 group-hover:translate-x-1 group-hover:-translate-y-1 group-hover:text-primary group-hover:opacity-100" />
                 </div>
 
-                <p className="max-w-xl text-sm leading-relaxed text-muted-foreground">
+                <p className="max-w-xl text-sm leading-relaxed  text-foreground/80">
                   {project.description}
                 </p>
               </div>

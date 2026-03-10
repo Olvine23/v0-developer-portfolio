@@ -50,7 +50,7 @@ export function Ideas() {
         Thoughts I&apos;ve written down
       </h2>
       
-      <p className="mb-16 max-w-2xl text-lg leading-relaxed text-muted-foreground">
+      <p className="mb-16 max-w-2xl text-lg leading-relaxed  text-foreground/80">
         Writing helps me think. These are attempts to explain things I&apos;ve learned, 
         patterns I&apos;ve noticed, and problems I&apos;m still figuring out.
       </p>
@@ -76,7 +76,7 @@ export function Ideas() {
               {article.title}
             </h3>
             
-            <p className="mb-6 flex-1 text-sm leading-relaxed text-muted-foreground">
+            <p className="mb-6 flex-1 text-sm leading-relaxed  text-foreground/80">
               {article.excerpt}
             </p>
             

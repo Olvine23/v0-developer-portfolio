@@ -46,7 +46,7 @@ export function Community() {
         Contributing to the developer ecosystem
       </h2>
 
-      <p className="mb-16 max-w-2xl text-lg leading-relaxed text-muted-foreground">
+      <p className="mb-16 max-w-2xl text-lg leading-relaxed  text-foreground/80">
         Beyond building software, I enjoy supporting developer communities —
         creating spaces where people can learn, collaborate, and grow together.
       </p>
@@ -68,7 +68,7 @@ export function Community() {
               {item.title}
             </h3>
 
-            <p className="text-sm leading-relaxed text-muted-foreground">
+            <p className="text-sm leading-relaxed  text-foreground/80">
               {item.description}
             </p>
           </div>

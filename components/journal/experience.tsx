@@ -77,7 +77,7 @@ export function Experience() {
         The places that shaped how I build software
       </h2>
 
-      <p className="mb-16 max-w-2xl text-lg leading-relaxed text-muted-foreground">
+      <p className="mb-16 max-w-2xl text-lg leading-relaxed  text-foreground/80">
         Over the past few years I've worked across mobile, web, and developer
         ecosystems, building products, supporting developers, and learning how
         good software teams operate.
@@ -97,7 +97,7 @@ export function Experience() {
                 <p className="font-mono text-xs uppercase tracking-widest text-primary">
                   {exp.period}
                 </p>
-                <p className="mt-1 text-sm text-muted-foreground">
+                <p className="mt-1 text-sm  text-foreground/80">
                   {exp.location}
                 </p>
               </div>
@@ -111,7 +111,7 @@ export function Experience() {
                   </span>
                 </h3>
 
-                <p className="mt-4 max-w-2xl text-sm leading-relaxed text-muted-foreground">
+                <p className="mt-4 max-w-2xl text-sm leading-relaxed  text-foreground/80">
                   {exp.description}
                 </p>
 

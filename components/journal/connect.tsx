@@ -46,7 +46,7 @@ export function Connect() {
         If any of this resonated, I&apos;d love to hear from you
       </h2>
 
-      <p className="mb-16 max-w-2xl text-lg leading-relaxed text-muted-foreground">
+      <p className="mb-16 max-w-2xl text-lg leading-relaxed  text-foreground/80">
         If any part of this journey resonated with you, feel free to reach out.
         I’m always open to conversations, collaborations, or simply connecting
         with fellow builders.
@@ -73,7 +73,7 @@ export function Connect() {
                 </span>
                 <ArrowUpRight className="h-4 w-4 text-muted-foreground opacity-0 transition-all duration-300 group-hover:translate-x-1 group-hover:-translate-y-1 group-hover:text-primary group-hover:opacity-100" />
               </div>
-              <p className="text-sm text-muted-foreground">
+              <p className="text-sm  text-foreground/80">
                 {link.description}
               </p>
             </div>

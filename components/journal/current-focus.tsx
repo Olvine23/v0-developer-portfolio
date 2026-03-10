@@ -40,7 +40,7 @@ export function CurrentFocus() {
         The questions I&apos;m currently trying to answer
       </h2>
       
-      <p className="mb-16 max-w-2xl text-lg leading-relaxed text-muted-foreground">
+      <p className="mb-16 max-w-2xl text-lg leading-relaxed  text-foreground/80">
         These are the rabbit holes I find myself in. Not portfolio projects, 
         but genuine curiosities that keep me building late into the night.
       </p>
@@ -61,7 +61,7 @@ export function CurrentFocus() {
             <item.icon className="mb-4 h-6 w-6 text-muted-foreground transition-all duration-300 group-hover:text-primary group-hover:scale-110" />
             
             <h3 className="mb-3 text-xl font-medium transition-colors duration-300 group-hover:text-primary">{item.title}</h3>
-            <p className="text-sm leading-relaxed text-muted-foreground">
+            <p className="text-sm leading-relaxed  text-foreground/80">
               {item.description}
             </p>
           </div>
