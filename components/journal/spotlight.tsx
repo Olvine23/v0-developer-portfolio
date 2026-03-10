@@ -25,7 +25,7 @@ export function Spotlight() {
     }
   }, [isVisible])
 
-  console.log("[v0] Spotlight position:", position, "visible:", isVisible)
+  // console.log("[v0] Spotlight position:", position, "visible:", isVisible)
   
   return (
     <div
