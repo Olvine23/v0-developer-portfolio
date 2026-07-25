@@ -106,7 +106,7 @@ function CarouselCard({
         <ProjectImage project={project} />
       </div>
 
-      <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-background via-background/20 to-transparent transition-opacity duration-300 group-hover:from-background/95" />
+      <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-background from-0% via-background/85 via-45% to-transparent to-85% transition-opacity duration-300 group-hover:via-background/95" />
 
       <div className="absolute inset-x-0 bottom-0 flex flex-col gap-3 p-6">
         <div className="flex items-center gap-3">

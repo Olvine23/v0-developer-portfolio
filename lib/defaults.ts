@@ -16,7 +16,7 @@ export const defaults: ContentMap = {
       repoLink: null,
       year: "2025",
       status: "Live",
-      coverImage: null,
+      coverImage: "/mylogo.png",
       screenshots: [],
     },
     {
