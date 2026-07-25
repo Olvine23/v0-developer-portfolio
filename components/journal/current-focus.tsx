@@ -1,29 +1,16 @@
-"use client"
-
 import { Sparkles, Bot, Smartphone } from "lucide-react"
+import { getSection } from "@/lib/content"
+import type { FocusIcon } from "@/lib/types"
 
-const explorations = [
-  {
-    icon: Bot,
-    title: "Intelligent Systems",
-    description: "Exploring how software systems can reason, plan, and act. Experimenting with LLM-powered workflows and tools that assist development.",
-    status: "Active exploration"
-  },
-  {
-    icon: Smartphone,
-    title: "Flutter Internals",
-    description: "Going deeper into rendering pipelines, custom painters, and performance optimization. Understanding the framework beyond the widget tree.",
-    status: "Ongoing learning"
-  },
-  {
-    icon: Sparkles,
-    title: "Adaptive Mobile Apps",
-    description: "Designing mobile experiences that adapt to user behavior and context. Exploring how intelligent systems can enhance everyday applications.",
-    status: "Current experiments"
-  }
-]
+const ICONS: Record<FocusIcon, typeof Bot> = {
+  Bot,
+  Smartphone,
+  Sparkles,
+}
 
-export function CurrentFocus() {
+export async function CurrentFocus() {
+  const explorations = await getSection("focus")
+
   return (
     <section id="exploring" className="relative px-6 py-32 md:px-12 lg:px-24">
       {/* Chapter header */}
@@ -39,33 +26,36 @@ export function CurrentFocus() {
       <h2 className="mb-6 max-w-3xl text-balance text-3xl font-medium tracking-tight md:text-4xl">
         The questions I&apos;m currently trying to answer
       </h2>
-      
+
       <p className="mb-16 max-w-2xl text-lg leading-relaxed  text-foreground/80">
-        These are the rabbit holes I find myself in. Not portfolio projects, 
+        These are the rabbit holes I find myself in. Not portfolio projects,
         but genuine curiosities that keep me building late into the night.
       </p>
 
       {/* Exploration cards */}
       <div className="grid gap-6 md:grid-cols-3">
-        {explorations.map((item, index) => (
-          <div 
-            key={index}
-            className="group relative border border-border bg-card p-8 transition-all duration-300 hover:-translate-y-2 hover:border-primary/50 hover:bg-secondary/50 hover:shadow-xl hover:shadow-primary/5"
-          >
-            {/* Status badge */}
-            <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-primary/30 bg-primary/10 px-3 py-1">
-              <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-primary" />
-              <span className="font-mono text-xs text-primary">{item.status}</span>
-            </div>
+        {explorations.map((item, index) => {
+          const Icon = ICONS[item.icon]
+          return (
+            <div
+              key={index}
+              className="group relative border border-border bg-card p-8 transition-all duration-300 hover:-translate-y-2 hover:border-primary/50 hover:bg-secondary/50 hover:shadow-xl hover:shadow-primary/5"
+            >
+              {/* Status badge */}
+              <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-primary/30 bg-primary/10 px-3 py-1">
+                <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-primary" />
+                <span className="font-mono text-xs text-primary">{item.status}</span>
+              </div>
 
-            <item.icon className="mb-4 h-6 w-6 text-muted-foreground transition-all duration-300 group-hover:text-primary group-hover:scale-110" />
-            
-            <h3 className="mb-3 text-xl font-medium transition-colors duration-300 group-hover:text-primary">{item.title}</h3>
-            <p className="text-sm leading-relaxed  text-foreground/80">
-              {item.description}
-            </p>
-          </div>
-        ))}
+              <Icon className="mb-4 h-6 w-6 text-muted-foreground transition-all duration-300 group-hover:text-primary group-hover:scale-110" />
+
+              <h3 className="mb-3 text-xl font-medium transition-colors duration-300 group-hover:text-primary">{item.title}</h3>
+              <p className="text-sm leading-relaxed  text-foreground/80">
+                {item.description}
+              </p>
+            </div>
+          )
+        })}
       </div>
     </section>
   )

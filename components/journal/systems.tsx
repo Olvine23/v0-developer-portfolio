@@ -1,55 +1,27 @@
-"use client"
-
+import Link from "next/link"
+import Image from "next/image"
 import { ArrowUpRight } from "lucide-react"
+import { getSection } from "@/lib/content"
+import type { ProjectStatus } from "@/lib/types"
 
-const projects = [
-  {
-    title: "MoviePlug",
-    category: "Mobile App",
-    description:
-      "An AI-powered movie recommendation app built to help users discover what to watch next. Currently live on the Play Store with 1K+ downloads.",
-    technologies: ["Flutter", "Firebase", "AI"],
-    link: "https://play.google.com/store/apps/details?id=com.ollytech.movieplug",
-    year: "2025",
-    status: "Live"
-  },
-  {
-    title: "VoiceHub",
-    category: "Mobile App",
-    description:
-      "A platform where artists express creativity through spoken word. VoiceHub allows creators to share poetry, storytelling, and audio art while building a community around voice-driven expression.",
-    technologies: ["Flutter", "Firebase"],
-    link: null,
-    year: "2024",
-    status: "In Progress"
-  },
-  {
-    title: "Stamp",
-    category: "Mobile App",
-    description:
-      "A digital memory journal designed to help people capture meaningful everyday moments. Stamp turns small life experiences into lasting memories through simple entries and reflections.",
-    technologies: ["Flutter"],
-    link: null,
-    year: "2024",
-    status: "In Progress"
-  }
-]
-function StatusBadge({ status }: { status: string }) {
-  const colors = {
-    Live: "bg-green-500",
-    "In Progress": "bg-yellow-500",
-    Community: "bg-blue-500"
-  }
+const STATUS_COLORS: Record<ProjectStatus, string> = {
+  Live: "bg-green-500",
+  "In Progress": "bg-yellow-500",
+  Community: "bg-blue-500",
+}
 
+function StatusBadge({ status }: { status: ProjectStatus }) {
   return (
     <div className="flex items-center gap-2 rounded-full border border-border px-2 py-1 text-xs font-mono text-muted-foreground">
-      <span className={`h-2 w-2 rounded-full ${colors[status as keyof typeof colors]}`} />
+      <span className={`h-2 w-2 rounded-full ${STATUS_COLORS[status]}`} />
       {status}
     </div>
   )
 }
 
-export function Systems() {
+export async function Systems() {
+  const projects = await getSection("projects")
+
   return (
     <section id="projects" className="relative px-6 py-32 md:px-12 lg:px-24">
       {/* Chapter header */}
@@ -72,34 +44,41 @@ export function Systems() {
 
       {/* Projects list */}
       <div className="space-y-1">
-        {projects.map((project, index) => (
-          <a
-            key={index}
-            href={project.link || undefined}
-            target="_blank"
-            rel="noopener noreferrer"
+        {projects.map((project) => (
+          <Link
+            key={project.slug}
+            href={`/work/${project.slug}`}
             className="group block border-t border-border py-8 transition-all duration-300 first:border-t-0 hover:bg-secondary/30 hover:pl-4"
           >
             <div className="flex flex-col gap-6 md:flex-row md:items-start md:justify-between">
-              
               {/* Left side */}
-              <div className="flex-1">
-                <div className="mb-3 flex items-center gap-4">
-                  <h3 className="text-xl font-medium transition-all duration-300 group-hover:text-primary group-hover:translate-x-1">
-                    {project.title}
-                  </h3>
+              <div className="flex flex-1 gap-6">
+                {project.coverImage && (
+                  <Image
+                    src={project.coverImage}
+                    alt=""
+                    width={96}
+                    height={64}
+                    className="hidden h-16 w-24 shrink-0 rounded object-cover border border-border sm:block"
+                  />
+                )}
+                <div>
+                  <div className="mb-3 flex items-center gap-4">
+                    <h3 className="text-xl font-medium transition-all duration-300 group-hover:text-primary group-hover:translate-x-1">
+                      {project.title}
+                    </h3>
 
-                  <ArrowUpRight className="h-4 w-4 text-muted-foreground opacity-0 transition-all duration-300 group-hover:translate-x-1 group-hover:-translate-y-1 group-hover:text-primary group-hover:opacity-100" />
+                    <ArrowUpRight className="h-4 w-4 text-muted-foreground opacity-0 transition-all duration-300 group-hover:translate-x-1 group-hover:-translate-y-1 group-hover:text-primary group-hover:opacity-100" />
+                  </div>
+
+                  <p className="max-w-xl text-sm leading-relaxed  text-foreground/80">
+                    {project.summary}
+                  </p>
                 </div>
-
-                <p className="max-w-xl text-sm leading-relaxed  text-foreground/80">
-                  {project.description}
-                </p>
               </div>
 
               {/* Right side */}
               <div className="flex flex-col items-start gap-3 md:items-end md:text-right">
-
                 <StatusBadge status={project.status} />
 
                 <span className="font-mono text-xs uppercase tracking-widest text-primary">
@@ -111,20 +90,18 @@ export function Systems() {
                 </span>
 
                 <div className="mt-2 flex flex-wrap gap-2 md:justify-end">
-                  {project.technologies.map((tech, i) => (
+                  {project.technologies.map((tech) => (
                     <span
-                      key={i}
+                      key={tech}
                       className="rounded-full border border-border px-2 py-0.5 font-mono text-xs text-muted-foreground transition-all duration-200 group-hover:border-primary/30 group-hover:text-secondary-foreground"
                     >
                       {tech}
                     </span>
                   ))}
                 </div>
-
               </div>
-
             </div>
-          </a>
+          </Link>
         ))}
       </div>
     </section>

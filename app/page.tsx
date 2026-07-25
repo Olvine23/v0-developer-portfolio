@@ -10,6 +10,10 @@ import { Navbar } from "@/components/journal/navbar"
 import { Experience } from "@/components/journal/experience"
 import { Community } from "@/components/journal/community"
 
+// Content is fetched from Netlify Blobs at request time, so this page can't
+// be statically prerendered — it needs to reflect admin edits immediately.
+export const dynamic = "force-dynamic"
+
 export default function Home() {
   return (
     <main className="relative min-h-screen">

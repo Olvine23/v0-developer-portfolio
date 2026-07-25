@@ -31,10 +31,10 @@ const links = [
 
 export function Connect() {
   return (
-    <section className="relative px-6 py-32 md:px-12 lg:px-24">
+    <section id="contact" className="relative scroll-mt-24 px-6 py-32 md:px-12 lg:px-24">
       {/* Chapter header */}
       <div className="mb-16 flex items-center gap-4">
-        <span className="font-mono text-sm text-muted-foreground">05</span>
+        <span className="font-mono text-sm text-muted-foreground">07</span>
         <div className="h-px w-12 bg-border" />
         <span className="font-mono text-xs uppercase tracking-widest text-muted-foreground">
           Let&apos;s Connect

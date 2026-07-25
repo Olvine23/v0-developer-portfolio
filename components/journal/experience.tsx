@@ -1,63 +1,8 @@
-"use client"
+import { getSection } from "@/lib/content"
 
-const experiences = [
-  {
-    company: "StockApp",
-    location: "Mombasa",
-    role: "Software Developer",
-    period: "Nov 2023 — May 2025",
-    description:
-      "Working on mobile and web platforms to build reliable tools that improve business workflows and user experience.",
-    highlights: [
-      "Developed mobile applications using Ionic to improve user engagement and feature delivery.",
-      "Architected web applications using Angular, improving performance and responsiveness.",
-      "Designed and integrated backend APIs using ASP.NET to support scalable data processing.",
-    ],
-  },
-  {
-    company: "Easyness",
-    location: "Ghana",
-    role: "Mobile App Developer Relations Engineer",
-    period: "Mar 2023 — Jun 2024",
-    description:
-      "Focused on developer engagement, product adoption, and knowledge sharing within the developer ecosystem.",
-    highlights: [
-      "Built relationships with developers to gather feedback and improve product direction.",
-      "Worked closely with product teams to translate developer insights into platform improvements.",
-      "Delivered workshops and technical presentations on eCommerce solutions and emerging technologies.",
-    ],
-  },
-  {
-  company: "Surestep Systems & Solutions",
-  location: "Nairobi",
-  role: "Software Developer",
-  period: "Jun 2023 — Sep 2023",
-  description:
-    "Worked on enterprise business systems using Microsoft Dynamics 365 Business Central (NAV), helping organizations adapt ERP workflows to their operational needs.",
-  highlights: [
-    "Customized and implemented business solutions using Microsoft Dynamics 365 Business Central (NAV).",
-    "Collaborated with cross-functional teams to translate business requirements into functional system features.",
-    "Integrated Business Central modules to ensure consistent data flow and system reliability.",
-    "Developed internal software tools to support organizational processes.",
-    "Trained end users on using the customized systems effectively."
-  ]
-},
-  {
-    company: "Tajilabs",
-    location: "Nairobi",
-    role: "Software Developer",
-    period: "May 2022 — Nov 2022",
-    description:
-      "Worked on modern web applications and backend integrations while collaborating across design and development teams.",
-    highlights: [
-      "Built web applications using Angular, Ionic, and Node.js.",
-      "Integrated third-party APIs and implemented MongoDB for efficient data management.",
-      "Collaborated with designers and developers to build intuitive user interfaces.",
-    ],
-  },
-]
+export async function Experience() {
+  const experiences = await getSection("experience")
 
-export function Experience() {
   return (
     <section
       id="experience"
@@ -91,7 +36,7 @@ export function Experience() {
             className="border-t border-border pt-8 first:border-t-0 first:pt-0"
           >
             <div className="grid gap-6 md:grid-cols-[220px_1fr] md:gap-12">
-              
+
               {/* Timeline */}
               <div>
                 <p className="font-mono text-xs uppercase tracking-widest text-primary">

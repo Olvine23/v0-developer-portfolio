@@ -1,32 +1,16 @@
-"use client"
-
 import { Users, Mic, GraduationCap } from "lucide-react"
+import { getSection } from "@/lib/content"
+import type { CommunityIcon } from "@/lib/types"
 
-const community = [
-  {
-    icon: Users,
-    role: "Community Lead",
-    title: "Flutter Kisumu",
-    description:
-      "Helping organize developer meetups and workshops around Flutter and mobile development within the Kisumu tech ecosystem."
-  },
-  {
-    icon: Mic,
-    role: "GDSC Lead",
-    title: "Google Developer Student Clubs — MMUST",
-    description:
-      "Led the developer community at Masinde Muliro University (2022–2023), organizing workshops, technical talks, and supporting students learning modern software development."
-  },
-  {
-    icon: GraduationCap,
-    role: "Mentor",
-    title: "Developer Mentorship",
-    description:
-      "Supporting upcoming developers by sharing practical knowledge about building real-world applications and navigating the tech industry."
-  }
-]
+const ICONS: Record<CommunityIcon, typeof Users> = {
+  Users,
+  Mic,
+  GraduationCap,
+}
 
-export function Community() {
+export async function Community() {
+  const community = await getSection("community")
+
   return (
     <section
       id="community"
@@ -53,26 +37,29 @@ export function Community() {
 
       {/* Community items */}
       <div className="grid gap-6 md:grid-cols-3">
-        {community.map((item, index) => (
-          <div
-            key={index}
-            className="group border border-border bg-card p-8 transition-all duration-300 hover:-translate-y-1 hover:border-primary/40 hover:bg-secondary/40"
-          >
-            <item.icon className="mb-4 h-6 w-6 text-muted-foreground transition-all duration-300 group-hover:text-primary group-hover:scale-110" />
+        {community.map((item, index) => {
+          const Icon = ICONS[item.icon]
+          return (
+            <div
+              key={index}
+              className="group border border-border bg-card p-8 transition-all duration-300 hover:-translate-y-1 hover:border-primary/40 hover:bg-secondary/40"
+            >
+              <Icon className="mb-4 h-6 w-6 text-muted-foreground transition-all duration-300 group-hover:text-primary group-hover:scale-110" />
 
-            <p className="font-mono text-xs uppercase tracking-widest text-primary">
-              {item.role}
-            </p>
+              <p className="font-mono text-xs uppercase tracking-widest text-primary">
+                {item.role}
+              </p>
 
-            <h3 className="mt-2 mb-3 text-lg font-medium transition-colors duration-300 group-hover:text-primary">
-              {item.title}
-            </h3>
+              <h3 className="mt-2 mb-3 text-lg font-medium transition-colors duration-300 group-hover:text-primary">
+                {item.title}
+              </h3>
 
-            <p className="text-sm leading-relaxed  text-foreground/80">
-              {item.description}
-            </p>
-          </div>
-        ))}
+              <p className="text-sm leading-relaxed  text-foreground/80">
+                {item.description}
+              </p>
+            </div>
+          )
+        })}
       </div>
     </section>
   )
