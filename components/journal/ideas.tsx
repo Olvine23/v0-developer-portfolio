@@ -1,5 +1,6 @@
 import { ArrowUpRight } from "lucide-react"
 import { getSection } from "@/lib/content"
+import { Reveal, StaggerReveal } from "@/components/motion/reveal"
 
 export async function Ideas() {
   const writings = await getSection("writings")
@@ -7,26 +8,28 @@ export async function Ideas() {
   return (
     <section className="relative bg-secondary/30 px-6 py-32 md:px-12 lg:px-24">
       {/* Chapter header */}
-      <div className="mb-16 flex items-center gap-4">
+      <Reveal className="mb-16 flex items-center gap-4">
         <span className="font-mono text-sm text-muted-foreground">05</span>
         <div className="h-px w-12 bg-border" />
         <span className="font-mono text-xs uppercase tracking-widest text-muted-foreground">
           Technical Ideas & Writing
         </span>
-      </div>
+      </Reveal>
 
       {/* Chapter title */}
-      <h2 className="mb-6 max-w-3xl text-balance text-3xl font-medium tracking-tight md:text-4xl">
-        Thoughts I&apos;ve written down
-      </h2>
+      <Reveal delay={0.1}>
+        <h2 className="mb-6 max-w-3xl text-balance text-3xl font-medium tracking-tight md:text-4xl">
+          Thoughts I&apos;ve written down
+        </h2>
 
-      <p className="mb-16 max-w-2xl text-lg leading-relaxed  text-foreground/80">
-        Writing helps me think. These are attempts to explain things I&apos;ve learned,
-        patterns I&apos;ve noticed, and problems I&apos;m still figuring out.
-      </p>
+        <p className="mb-16 max-w-2xl text-lg leading-relaxed  text-foreground/80">
+          Writing helps me think. These are attempts to explain things I&apos;ve learned,
+          patterns I&apos;ve noticed, and problems I&apos;m still figuring out.
+        </p>
+      </Reveal>
 
       {/* Articles grid */}
-      <div className="grid gap-6 md:grid-cols-2">
+      <StaggerReveal className="grid gap-6 md:grid-cols-2">
         {writings.map((article, index) => (
           <a
             key={index}
@@ -56,7 +59,7 @@ export async function Ideas() {
             </div>
           </a>
         ))}
-      </div>
+      </StaggerReveal>
     </section>
   )
 }

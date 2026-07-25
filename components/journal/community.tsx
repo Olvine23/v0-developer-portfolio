@@ -1,6 +1,7 @@
 import { Users, Mic, GraduationCap } from "lucide-react"
 import { getSection } from "@/lib/content"
 import type { CommunityIcon } from "@/lib/types"
+import { Reveal, StaggerReveal } from "@/components/motion/reveal"
 
 const ICONS: Record<CommunityIcon, typeof Users> = {
   Users,
@@ -17,26 +18,28 @@ export async function Community() {
       className="relative scroll-mt-24 px-6 py-32 md:px-12 lg:px-24"
     >
       {/* Chapter header */}
-      <div className="mb-16 flex items-center gap-4">
+      <Reveal className="mb-16 flex items-center gap-4">
         <span className="font-mono text-sm text-muted-foreground">04</span>
         <div className="h-px w-12 bg-border" />
         <span className="font-mono text-xs uppercase tracking-widest text-muted-foreground">
           Community
         </span>
-      </div>
+      </Reveal>
 
       {/* Title */}
-      <h2 className="mb-6 max-w-3xl text-balance text-3xl font-medium tracking-tight md:text-4xl">
-        Contributing to the developer ecosystem
-      </h2>
+      <Reveal delay={0.1}>
+        <h2 className="mb-6 max-w-3xl text-balance text-3xl font-medium tracking-tight md:text-4xl">
+          Contributing to the developer ecosystem
+        </h2>
 
-      <p className="mb-16 max-w-2xl text-lg leading-relaxed  text-foreground/80">
-        Beyond building software, I enjoy supporting developer communities —
-        creating spaces where people can learn, collaborate, and grow together.
-      </p>
+        <p className="mb-16 max-w-2xl text-lg leading-relaxed  text-foreground/80">
+          Beyond building software, I enjoy supporting developer communities —
+          creating spaces where people can learn, collaborate, and grow together.
+        </p>
+      </Reveal>
 
       {/* Community items */}
-      <div className="grid gap-6 md:grid-cols-3">
+      <StaggerReveal className="grid gap-6 md:grid-cols-3">
         {community.map((item, index) => {
           const Icon = ICONS[item.icon]
           return (
@@ -60,7 +63,7 @@ export async function Community() {
             </div>
           )
         })}
-      </div>
+      </StaggerReveal>
     </section>
   )
 }

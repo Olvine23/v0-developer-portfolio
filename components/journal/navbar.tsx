@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react"
 import { Menu, X } from "lucide-react"
 import clsx from "clsx"
+import { Magnetic } from "@/components/motion/magnetic"
 
 const navItems = [
   { label: "About", href: "#about" },
@@ -52,18 +53,20 @@ export function Navbar() {
         )}
       >
         <div className="mx-auto flex h-20 max-w-7xl items-center justify-between px-6 md:px-12 lg:px-24">
-        <a
-  href="#top"
-  className="group flex items-center"
-  aria-label="Go to top"
->
-  <div className="flex items-center rounded-md border border-border px-3 py-1.5 text-lg font-semibold tracking-wide transition-all duration-300 group-hover:border-primary/40">
-    <span className="text-primary">O</span>
-    <span className="text-foreground transition-colors duration-300 group-hover:text-primary">
-      G
-    </span>
-  </div>
-</a>
+        <Magnetic>
+          <a
+            href="#top"
+            className="group flex items-center"
+            aria-label="Go to top"
+          >
+            <div className="flex items-center rounded-md border border-border px-3 py-1.5 text-lg font-semibold tracking-wide transition-all duration-300 group-hover:border-primary/40">
+              <span className="text-primary">O</span>
+              <span className="text-foreground transition-colors duration-300 group-hover:text-primary">
+                G
+              </span>
+            </div>
+          </a>
+        </Magnetic>
           <nav className="hidden items-center gap-8 md:flex">
             {navItems.map((item) => (
               <a

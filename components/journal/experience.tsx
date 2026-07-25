@@ -1,4 +1,5 @@
 import { getSection } from "@/lib/content"
+import { Reveal, StaggerReveal } from "@/components/motion/reveal"
 
 export async function Experience() {
   const experiences = await getSection("experience")
@@ -9,27 +10,29 @@ export async function Experience() {
       className="relative scroll-mt-24 px-6 py-32 md:px-12 lg:px-24"
     >
       {/* Chapter header */}
-      <div className="mb-16 flex items-center gap-4">
+      <Reveal className="mb-16 flex items-center gap-4">
         <span className="font-mono text-sm text-muted-foreground">03</span>
         <div className="h-px w-12 bg-border" />
         <span className="font-mono text-xs uppercase tracking-widest text-muted-foreground">
           Where I&apos;ve Worked
         </span>
-      </div>
+      </Reveal>
 
       {/* Title */}
-      <h2 className="mb-6 max-w-3xl text-balance text-3xl font-medium tracking-tight md:text-4xl">
-        The places that shaped how I build software
-      </h2>
+      <Reveal delay={0.1}>
+        <h2 className="mb-6 max-w-3xl text-balance text-3xl font-medium tracking-tight md:text-4xl">
+          The places that shaped how I build software
+        </h2>
 
-      <p className="mb-16 max-w-2xl text-lg leading-relaxed  text-foreground/80">
-        Over the past few years I've worked across mobile, web, and developer
-        ecosystems, building products, supporting developers, and learning how
-        good software teams operate.
-      </p>
+        <p className="mb-16 max-w-2xl text-lg leading-relaxed  text-foreground/80">
+          Over the past few years I've worked across mobile, web, and developer
+          ecosystems, building products, supporting developers, and learning how
+          good software teams operate.
+        </p>
+      </Reveal>
 
       {/* Experience list */}
-      <div className="space-y-12">
+      <StaggerReveal className="space-y-12">
         {experiences.map((exp, index) => (
           <div
             key={index}
@@ -76,7 +79,7 @@ export async function Experience() {
             </div>
           </div>
         ))}
-      </div>
+      </StaggerReveal>
     </section>
   )
 }

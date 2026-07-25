@@ -1,6 +1,7 @@
 import { Sparkles, Bot, Smartphone } from "lucide-react"
 import { getSection } from "@/lib/content"
 import type { FocusIcon } from "@/lib/types"
+import { Reveal, StaggerReveal } from "@/components/motion/reveal"
 
 const ICONS: Record<FocusIcon, typeof Bot> = {
   Bot,
@@ -14,26 +15,28 @@ export async function CurrentFocus() {
   return (
     <section id="exploring" className="relative px-6 py-32 md:px-12 lg:px-24">
       {/* Chapter header */}
-      <div className="mb-16 flex items-center gap-4">
+      <Reveal className="mb-16 flex items-center gap-4">
         <span className="font-mono text-sm text-muted-foreground">01</span>
         <div className="h-px w-12 bg-border" />
         <span className="font-mono text-xs uppercase tracking-widest text-muted-foreground">
           What I&apos;m Exploring Now
         </span>
-      </div>
+      </Reveal>
 
       {/* Chapter title */}
-      <h2 className="mb-6 max-w-3xl text-balance text-3xl font-medium tracking-tight md:text-4xl">
-        The questions I&apos;m currently trying to answer
-      </h2>
+      <Reveal delay={0.1}>
+        <h2 className="mb-6 max-w-3xl text-balance text-3xl font-medium tracking-tight md:text-4xl">
+          The questions I&apos;m currently trying to answer
+        </h2>
 
-      <p className="mb-16 max-w-2xl text-lg leading-relaxed  text-foreground/80">
-        These are the rabbit holes I find myself in. Not portfolio projects,
-        but genuine curiosities that keep me building late into the night.
-      </p>
+        <p className="mb-16 max-w-2xl text-lg leading-relaxed  text-foreground/80">
+          These are the rabbit holes I find myself in. Not portfolio projects,
+          but genuine curiosities that keep me building late into the night.
+        </p>
+      </Reveal>
 
       {/* Exploration cards */}
-      <div className="grid gap-6 md:grid-cols-3">
+      <StaggerReveal className="grid gap-6 md:grid-cols-3">
         {explorations.map((item, index) => {
           const Icon = ICONS[item.icon]
           return (
@@ -56,7 +59,7 @@ export async function CurrentFocus() {
             </div>
           )
         })}
-      </div>
+      </StaggerReveal>
     </section>
   )
 }

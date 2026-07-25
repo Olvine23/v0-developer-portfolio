@@ -1,5 +1,7 @@
 "use client"
 
+import { Reveal, StaggerReveal } from "@/components/motion/reveal"
+
 const milestones = [
   {
     year: "2026",
@@ -35,30 +37,32 @@ export function Evolution() {
   return (
     <section className="relative px-6 py-32 md:px-12 lg:px-24">
       {/* Chapter header */}
-      <div className="mb-16 flex items-center gap-4">
+      <Reveal className="mb-16 flex items-center gap-4">
         <span className="font-mono text-sm text-muted-foreground">06</span>
         <div className="h-px w-12 bg-border" />
         <span className="font-mono text-xs uppercase tracking-widest text-muted-foreground">
           How I Got Here
         </span>
-      </div>
+      </Reveal>
 
       {/* Chapter title */}
-      <h2 className="mb-6 max-w-3xl text-balance text-3xl font-medium tracking-tight md:text-4xl">
-        The evolution of a developer
-      </h2>
-      
-      <p className="mb-16 max-w-2xl text-lg leading-relaxed  text-foreground/80">
-        Every year brought new tools, new problems, and new ways of thinking. 
-        Here&apos;s the path that led me to where I am now.
-      </p>
+      <Reveal delay={0.1}>
+        <h2 className="mb-6 max-w-3xl text-balance text-3xl font-medium tracking-tight md:text-4xl">
+          The evolution of a developer
+        </h2>
+
+        <p className="mb-16 max-w-2xl text-lg leading-relaxed  text-foreground/80">
+          Every year brought new tools, new problems, and new ways of thinking.
+          Here&apos;s the path that led me to where I am now.
+        </p>
+      </Reveal>
 
       {/* Timeline - Mobile: simple left-aligned, Desktop: centered alternating */}
       <div className="relative">
         {/* Vertical line - left on mobile, center on desktop */}
         <div className="absolute bottom-0 left-[11px] top-0 w-px bg-border md:left-1/2 md:-translate-x-px" />
 
-        <div className="space-y-10 md:space-y-16">
+        <StaggerReveal className="space-y-10 md:space-y-16">
           {milestones.map((milestone, index) => (
             <div 
               key={index}
@@ -116,7 +120,7 @@ export function Evolution() {
               <div className="hidden flex-1 md:block" />
             </div>
           ))}
-        </div>
+        </StaggerReveal>
       </div>
     </section>
   )
